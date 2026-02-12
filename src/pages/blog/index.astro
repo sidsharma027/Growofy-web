@@ -1,0 +1,37 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { AstroSeoProps } from "@astrolib/seo";
+import Articles from "@components/blog/Articles.astro";
+
+const seo: AstroSeoProps = {
+	title: "Growofy Insights: Digital Growth Strategies for Indian Businesses",
+	description:
+		"Expert insights on performance marketing, WhatsApp automation, and sales funnels for offline businesses going online. Learn how to scale revenue predictably.",
+	canonical: "https://growofy.in/blog/",
+	openGraph: {
+		url: "https://growofy.in/blog",
+		title: "Growofy Insights: Digital Growth Strategies for Indian Businesses",
+		description:
+			"Expert insights on performance marketing, WhatsApp automation, and sales funnels for offline businesses going online. Learn how to scale revenue predictably.",
+		images: [
+			{
+				url: "https://growofy.in/opengraph/social-og.jpg",
+				width: 1200,
+				height: 630,
+				alt: "Growofy Insights Blog",
+				type: "image/jpeg",
+			},
+		],
+		site_name: "Growofy",
+	},
+	twitter: {
+		handle: "@growofy",
+		site: "@growofy",
+		cardType: "summary_large_image",
+	},
+};
+---
+
+<BaseLayout seo={seo}>
+	<Articles />
+</BaseLayout>

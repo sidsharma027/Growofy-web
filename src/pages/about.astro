@@ -1,0 +1,107 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const seo = {
+  title: "About Growofy - Building Revenue Systems for Indian Businesses",
+  description: "Learn about Growofy, the performance marketing agency helping offline businesses build predictable online revenue systems.",
+};
+---
+
+<BaseLayout seo={seo}>
+  <!-- Hero Section -->
+  <section class="section py-20 lg:py-32 bg-zinc-950 text-white min-h-[70vh] flex items-center">
+    <div class="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
+      <h1 class="font-display text-5xl lg:text-7xl font-bold uppercase tracking-tight mb-6">
+        We Don't Just Do Marketing. <span class="text-lime-400">We Build Systems.</span>
+      </h1>
+      <p class="text-lg lg:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto">
+        Growofy was born from a simple frustration: Business owners were tired of agencies delivering "likes" and "reach" instead of sales. We decided to fix that.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="section py-20 bg-white text-zinc-900">
+    <div class="col-span-12 lg:col-span-6 lg:col-start-2">
+      <h2 class="font-display text-3xl lg:text-5xl font-bold uppercase mb-8">Our Mission</h2>
+      <p class="text-xl text-zinc-700 leading-relaxed font-medium">
+        To help 10,000 offline Indian businesses transition into profitable online brands by building structured, predictable, and scalable digital revenue systems.
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Approach - 4 Pillars -->
+  <section class="section py-20 bg-zinc-50">
+      <div class="col-span-12 text-center mb-16">
+          <h2 class="font-display text-4xl font-bold uppercase">The Growofy Growth System™</h2>
+          <p class="mt-4 text-zinc-500">Our proprietary framework for guaranteed results.</p>
+      </div>
+      <div class="col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="p-8 bg-white rounded-2xl border border-zinc-100 shadow-sm">
+              <span class="text-4xl font-bold text-lime-500 mb-4 block">01</span>
+              <h3 class="text-xl font-bold mb-2">Foundation</h3>
+              <p class="text-zinc-500 text-sm">Websites, Tracking, Pixel, Analytics. The digital infrastructure must be solid first.</p>
+          </div>
+          <div class="p-8 bg-white rounded-2xl border border-zinc-100 shadow-sm">
+              <span class="text-4xl font-bold text-blue-500 mb-4 block">02</span>
+              <h3 class="text-xl font-bold mb-2">Traffic</h3>
+              <p class="text-zinc-500 text-sm">Targeted Meta Ads & Google Ads to bring your ideal customer to the door.</p>
+          </div>
+          <div class="p-8 bg-white rounded-2xl border border-zinc-100 shadow-sm">
+              <span class="text-4xl font-bold text-rose-500 mb-4 block">03</span>
+              <h3 class="text-xl font-bold mb-2">Conversion</h3>
+              <p class="text-zinc-500 text-sm">Funnels, Offers, and Upsells that turn visitors into paying customers.</p>
+          </div>
+           <div class="p-8 bg-white rounded-2xl border border-zinc-100 shadow-sm">
+              <span class="text-4xl font-bold text-orange-500 mb-4 block">04</span>
+              <h3 class="text-xl font-bold mb-2">Scale</h3>
+              <p class="text-zinc-500 text-sm">Optimization, Retargeting, and budget scaling to grow revenue exponentially.</p>
+          </div>
+      </div>
+  </section>
+
+  <!-- Who We Help -->
+  <section class="section py-20 bg-zinc-900 text-white">
+      <div class="col-span-12 lg:col-span-6 lg:col-start-2">
+          <h2 class="font-display text-3xl lg:text-5xl font-bold uppercase mb-8">Who We Are For</h2>
+          <ul class="space-y-6 text-xl text-zinc-300">
+            <li class="flex items-start gap-4">
+                <span class="text-lime-400 mt-1">→</span>
+                <div>
+                    <strong class="text-white block">Offline Retailers</strong>
+                    Wanting to launch a D2C online store.
+                </div>
+            </li>
+            <li class="flex items-start gap-4">
+                <span class="text-lime-400 mt-1">→</span>
+                 <div>
+                    <strong class="text-white block">Service Businesses</strong>
+                    Clinics, Salons, Institutes needing qualified leads.
+                </div>
+            </li>
+            <li class="flex items-start gap-4">
+                <span class="text-lime-400 mt-1">→</span>
+                 <div>
+                    <strong class="text-white block">Established Brands</strong>
+                    Doing ₹1Cr+ but stuck at a revenue plateau.
+                </div>
+            </li>
+          </ul>
+      </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section py-32 bg-lime-400 text-black text-center">
+      <div class="col-span-12">
+          <h2 class="font-display text-4xl lg:text-6xl font-bold uppercase mb-8">Partner with Growofy</h2>
+          <div class="flex justify-center">
+            <div class="squircle-bg rounded-lg bg-black text-white">
+              <a href="/contact" class="flex h-12 items-center px-8 text-lg font-bold hover:text-lime-400 transition-colors">
+                Book Strategy Call
+              </a>
+            </div>
+          </div>
+      </div>
+  </section>
+
+</BaseLayout>

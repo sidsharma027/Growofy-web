@@ -1,0 +1,189 @@
+---
+const testimonials = [
+  {
+    name: "Rajesh Kumar",
+    role: "Owner, City Trends Fashion",
+    text: "Before Growofy, we depended 100% on walk-ins. Now, 40% of our sales come from online orders and WhatsApp automation. It's a game changer.",
+    stars: 5,
+  },
+  {
+    name: "Aditya Mehta",
+    role: "Founder, Mehta Jewelers",
+    text: "We were skeptical about digital marketing for jewelry. Growofy's strategy brought us genuine high-ticket leads who actually visited the store.",
+    stars: 5,
+  },
+  {
+    name: "Sneha Reddy",
+    role: "Director, GreenLeaf Clinics",
+    text: "The WhatsApp appointment system is brilliant. Our reception time is cut in half, and bookings are up by 300%. Highly recommended.",
+    stars: 5,
+  },
+  {
+    name: "Vikram Malhotra",
+    role: "CEO, VM Real Estate",
+    text: "Finally an agency that understands ROI. We stopped wasting money on random boosting and started getting qualified leads that convert.",
+    stars: 5,
+  },
+  {
+    name: "Anjali Singh",
+    role: "Owner, The Style Studio",
+    text: "Growofy helped us launch our online store. Within 3 months, we're shipping pan-India. They truly partner in your growth.",
+    stars: 5,
+  },
+  {
+    name: "Karthik Iyer",
+    role: "Founder, Iyer Fitness",
+    text: "Automated follow-ups mean we never lose a lead. Our membership conversions have doubled since working with the Growofy team.",
+    stars: 5,
+  },
+];
+---
+
+<section id="testimonials" class="bg-white overflow-hidden">
+  <div class="mx-auto px-8 py-12 md:px-12 lg:py-24 2xl:max-w-7xl">
+    <div class="mx-auto mb-12 max-w-4xl text-center">
+      <span class="text-xs font-semibold uppercase tracking-wide text-blue-600">
+        Success Stories
+      </span>
+      <h2
+        class="mt-4 font-display text-4xl font-bold text-zinc-900 lg:text-6xl">
+        Trusted by ambitious <span class="text-blue-600">business owners</span>
+      </h2>
+      <p class="mt-4 text-lg text-zinc-600">
+        Real results for real businesses. See what our partners have to say about
+        working with Growofy.
+      </p>
+    </div>
+
+    <!-- Carousel Wrapper -->
+    <div class="relative group">
+      <!-- Carousel Track -->
+      <div 
+        id="testimonials-track"
+        class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-8 scrollbar-hide" 
+        style="scrollbar-width: none; -ms-overflow-style: none;"
+      >
+        {
+          testimonials.map((t) => (
+            <div class="testimonial-card flex-none w-full md:w-[400px] h-[350px] snap-center flex flex-col justify-between rounded-3xl border border-zinc-100 bg-zinc-50 p-8 shadow-sm transition-shadow hover:shadow-md">
+              <div>
+                <div class="mb-6 flex gap-1 text-yellow-400">
+                  {[...Array(t.stars)].map(() => (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="h-5 w-5">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  ))}
+                </div>
+                <p class="text-lg font-medium italic text-zinc-700">
+                  "{t.text}"
+                </p>
+              </div>
+              <div class="mt-8 border-t border-zinc-200 pt-6">
+                <p class="font-bold text-zinc-900">{t.name}</p>
+                <p class="text-sm text-zinc-500">{t.role}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      
+      <!-- Navigation Buttons (Optional but helpful) -->
+      <div class="hidden md:flex justify-center gap-4 mt-4">
+          <button id="prev-btn" class="p-2 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-600 transition-colors" aria-label="Previous testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+          </button>
+          <button id="next-btn" class="p-2 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-600 transition-colors" aria-label="Next testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+          </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    initCarousel();
+  });
+
+  // Fallback for non-ViewTransitions pages
+  if (document.readyState === 'complete') {
+    initCarousel();
+  } else {
+    document.addEventListener('DOMContentLoaded', initCarousel);
+  }
+
+  function initCarousel() {
+    const track = document.getElementById('testimonials-track');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    
+    if (!track) return;
+
+    let autoPlayInterval;
+    const cardWidth = 400 + 24; // Width + gap (approximate for calculation, scrollBy handles visually)
+
+    // Auto-scroll function
+    const autoScroll = () => {
+        if (!track) return;
+        
+        // Check if we reached the end
+        if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
+            track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            track.scrollBy({ left: 300, behavior: 'smooth' }); // Scroll a somewhat card-width amount
+        }
+    };
+
+    const startAutoPlay = () => {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(autoScroll, 3000); // 3 seconds per slide
+    };
+
+    const stopAutoPlay = () => {
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+    };
+
+    // Scroll buttons
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({ left: 300, behavior: 'smooth' });
+            stopAutoPlay();
+            startAutoPlay(); // Restart timer
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({ left: -300, behavior: 'smooth' });
+            stopAutoPlay();
+            startAutoPlay();
+        });
+    }
+
+    // Pause on hover
+    track.addEventListener('mouseenter', stopAutoPlay);
+    track.addEventListener('mouseleave', startAutoPlay);
+    
+    // Initial start
+    startAutoPlay();
+  }
+</script>

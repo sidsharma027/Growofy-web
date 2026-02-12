@@ -1,0 +1,139 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const seo = {
+  title: "Case Studies - Growofy",
+  description: "Real results for real Indian businesses. See how Growofy drives revenue, leads, and growth for D2C and service brands.",
+};
+---
+
+<BaseLayout seo={seo}>
+  <!-- Hero Section -->
+  <section class="section py-20 lg:py-32 bg-zinc-950 text-white min-h-[70vh] flex items-center">
+    <div class="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
+      <h1 class="font-display text-5xl lg:text-7xl font-bold uppercase tracking-tight mb-6">
+        Real Results. <span class="text-lime-400">Zero Fluff.</span>
+      </h1>
+      <p class="text-lg lg:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto">
+        We don't sell promises. We sell growth. Here are the documented results of our structured digital systems in action.
+      </p>
+    </div>
+  </section>
+
+  <!-- Overview Stats -->
+  <section class="section py-24 bg-zinc-950 text-white border-t border-zinc-800">
+      <div class="col-span-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center uppercase tracking-tight">
+          <div>
+              <span class="text-4xl lg:text-6xl font-bold font-display block text-lime-400">₹12Cr+</span>
+              <span class="text-zinc-500 text-sm">Revenue Generated</span>
+          </div>
+          <div>
+              <span class="text-4xl lg:text-6xl font-bold font-display block text-lime-400">50+</span>
+              <span class="text-zinc-500 text-sm">Businesses Scaled</span>
+          </div>
+          <div>
+              <span class="text-4xl lg:text-6xl font-bold font-display block text-lime-400">30k+</span>
+              <span class="text-zinc-500 text-sm">Leads Delivered</span>
+          </div>
+          <div>
+              <span class="text-4xl lg:text-6xl font-bold font-display block text-lime-400">600%</span>
+              <span class="text-zinc-500 text-sm">Avg. Client ROAS</span>
+          </div>
+      </div>
+  </section>
+
+  <!-- Case Studies Grid -->
+  <section class="section py-20 bg-white text-zinc-900">
+    <div class="col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Case Study 1 -->
+      <div class="p-8 bg-zinc-50 rounded-2xl border border-zinc-100 shadow-sm flex flex-col justify-between">
+          <div>
+              <div class="bg-lime-200 text-lime-800 text-xs font-bold px-2 py-1 inline-block rounded mb-4 uppercase">D2C Fashion</div>
+              <h3 class="font-display text-2xl font-bold mb-2">City Trends Fashion</h3>
+              <p class="text-zinc-500 text-sm mb-6">Offline store struggling with footfall shifted to online sales.</p>
+              
+              <div class="space-y-2 mb-8">
+                  <div class="flex justify-between border-b pb-2">
+                      <span class="text-sm text-zinc-400">Revenue</span>
+                      <span class="font-bold text-lime-600">₹12L in 90 Days</span>
+                  </div>
+                  <div class="flex justify-between border-b pb-2">
+                       <span class="text-sm text-zinc-400">Result</span>
+                       <span class="font-bold text-lime-600">40% Online Sales</span>
+                  </div>
+                   <div class="flex justify-between">
+                       <span class="text-sm text-zinc-400">Strategy</span>
+                       <span class="font-bold text-zinc-800">Shopify + Meta Ads</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+       <!-- Case Study 2 -->
+      <div class="p-8 bg-zinc-50 rounded-2xl border border-zinc-100 shadow-sm flex flex-col justify-between">
+          <div>
+              <div class="bg-blue-200 text-blue-800 text-xs font-bold px-2 py-1 inline-block rounded mb-4 uppercase">Healthcare</div>
+              <h3 class="font-display text-2xl font-bold mb-2">GreenLeaf Clinics</h3>
+              <p class="text-zinc-500 text-sm mb-6">Ayurvedic clinic needing reliable patient bookings.</p>
+              
+              <div class="space-y-2 mb-8">
+                  <div class="flex justify-between border-b pb-2">
+                      <span class="text-sm text-zinc-400">Growth</span>
+                      <span class="font-bold text-blue-600">300% Bookings</span>
+                  </div>
+                  <div class="flex justify-between border-b pb-2">
+                       <span class="text-sm text-zinc-400">CPL</span>
+                       <span class="font-bold text-blue-600">₹120 / Lead</span>
+                  </div>
+                   <div class="flex justify-between">
+                       <span class="text-sm text-zinc-400">Strategy</span>
+                       <span class="font-bold text-zinc-800">Lead Gen + WhatsApp</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+       <!-- Case Study 3 -->
+      <div class="p-8 bg-zinc-50 rounded-2xl border border-zinc-100 shadow-sm flex flex-col justify-between">
+          <div>
+              <div class="bg-orange-200 text-orange-800 text-xs font-bold px-2 py-1 inline-block rounded mb-4 uppercase">Jewelry</div>
+              <h3 class="font-display text-2xl font-bold mb-2">Mehta Jewelers</h3>
+              <p class="text-zinc-500 text-sm mb-6">Traditional jeweler wanting high-ticket leads.</p>
+              
+              <div class="space-y-2 mb-8">
+                  <div class="flex justify-between border-b pb-2">
+                      <span class="text-sm text-zinc-400">ROAS</span>
+                      <span class="font-bold text-orange-600">8.5X Return</span>
+                  </div>
+                  <div class="flex justify-between border-b pb-2">
+                       <span class="text-sm text-zinc-400">Sales</span>
+                       <span class="font-bold text-orange-600">₹45L Generated</span>
+                  </div>
+                   <div class="flex justify-between">
+                       <span class="text-sm text-zinc-400">Strategy</span>
+                       <span class="font-bold text-zinc-800">High-Ticket Funnel</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="section py-32 bg-white text-center border-t border-zinc-100">
+      <div class="col-span-12">
+          <h2 class="font-display text-4xl lg:text-6xl font-bold uppercase mb-8 text-black">Be Our Next Case Study</h2>
+          <div class="flex justify-center">
+            <div class="squircle-bg rounded-lg bg-black text-white">
+              <a href="/contact" class="flex h-12 items-center px-8 text-lg font-bold hover:text-lime-400 transition-colors">
+                Book Strategy Call
+              </a>
+            </div>
+          </div>
+      </div>
+  </section>
+
+</BaseLayout>

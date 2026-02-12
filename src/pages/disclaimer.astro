@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const seo = {
+  title: "Disclaimer - Growofy",
+  description: "Read Growofy's Disclaimer regarding earnings, results, and limitations of liability.",
+};
+---
+
+<BaseLayout seo={seo}>
+  <section class="section py-32 bg-zinc-50 min-h-screen">
+    <div class="col-span-12 lg:col-span-8 lg:col-start-3 prose prose-zinc max-w-none">
+      <div class="mb-16">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="h-1 w-12 bg-zinc-900"></div>
+          <span class="font-mono text-xs font-bold uppercase tracking-widest text-zinc-500">Last Updated: January 2026</span>
+        </div>
+        <h1 class="font-display text-6xl font-black uppercase leading-none tracking-tighter text-zinc-900 md:text-8xl lg:text-9xl">
+          Disclaimer
+        </h1>
+      </div>
+      
+      <h3>1. No Guarantee of Results</h3>
+      <p>
+        Growofy is a performance marketing and digital growth agency. We use proven strategies, structured systems, and industry methodologies to help your business grow. However, every business is unique. We cannot and do not guarantee specific results, revenue figures, or ROI for any client.
+      </p>
+
+      <h3>2. Earnings & Performance Disclaimer</h3>
+      <p>
+        Any case studies, testimonials, or revenue figures mentioned on our website or in our marketing materials represent the results achieved by specific clients under specific circumstances. These results are not typical and should not be interpreted as a promise or guarantee that you will achieve the same or similar results. Your success depends on your business model, market conditions, product-market fit, and dedicated effort.
+      </p>
+
+      <h3>3. Educational & Informational Purposes</h3>
+      <p>
+        The content provided on our website, blog, and social media channels is for educational and informational purposes only. It does not constitute legal, financial, or professional advice. You should consult with appropriate professionals before making significant business decisions.
+      </p>
+
+      <h3>4. Third-Party Platforms</h3>
+      <p>
+        We utilize third-party platforms such as Meta (Facebook & Instagram), WhatsApp, and Google for advertising and marketing services. These platforms operate independently, and their policies, algorithms, and performance metrics are subject to change without notice. Growofy is not liable for changes, account restrictions, or policy violations imposed by these platforms.
+      </p>
+
+      <h3>5. Forward-Looking Statements</h3>
+      <p>
+        Materials on our website may contain forward-looking statements that involve risks and uncertainties. Actual results may differ materially from those expressed or implied in such statements.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

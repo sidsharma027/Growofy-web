@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const seo = {
+  title: "Refund Policy - Growofy",
+  description: "Understand Growofy's Refund Policy. Learn about eligibility, non-refundable services, and cancellation terms.",
+};
+---
+
+<BaseLayout seo={seo}>
+  <section class="section py-32 bg-zinc-50 min-h-screen">
+    <div class="col-span-12 lg:col-span-8 lg:col-start-3 prose prose-zinc max-w-none">
+      <div class="mb-16">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="h-1 w-12 bg-zinc-900"></div>
+          <span class="font-mono text-xs font-bold uppercase tracking-widest text-zinc-500">Last Updated: January 2026</span>
+        </div>
+        <h1 class="font-display text-6xl font-black uppercase leading-none tracking-tighter text-zinc-900 md:text-8xl lg:text-9xl">
+          Refund<br />Policy
+        </h1>
+      </div>
+      
+      <h3>1. General Policy</h3>
+      <p>
+        At Growofy, we strive to provide the highest quality services to our clients. However, due to the nature of digital marketing and consulting services, our refund policy is strictly defined below.
+      </p>
+
+      <h3>2. Non-Refundable Services</h3>
+      <p>
+        Certain services are inherently non-refundable:
+        <ul>
+            <li>**Ad Spend:** Any budget spent directly on advertising platforms (Meta, Google, etc.) is paid directly to the platform and cannot be refunded by Growofy under any circumstances.</li>
+            <li>**Service Retainers:** Monthly management fees are charged for the time and expertise allocated to your account. Once work has commenced for a billing cycle, the retainer for that period is non-refundable.</li>
+            <li>**Website Development:** Payments made for custom development work (milestone-based or upfront) are non-refundable once the corresponding phase of work has begun.</li>
+        </ul>
+      </p>
+
+      <h3>3. Cancellation Policy</h3>
+      <p>
+        Clients may cancel their service agreement with a required notice period as outlined in their specific contract (typically 30 days). Cancellations must be submitted in writing via email to <a href="mailto:growofy@gmail.com">growofy@gmail.com</a>.
+      </p>
+
+      <h3>4. Refund Eligibility</h3>
+      <p>
+        Refunds may be considered only if:
+        <ul>
+            <li>Services paid for were not commenced or delivered.</li>
+            <li>A duplicate payment was made in error.</li>
+            <li>Growofy explicitly failed to deliver the scope of work outlined in the agreement, subject to review and mutual agreement.</li>
+        </ul>
+      </p>
+
+      <h3>5. Dispute Resolution</h3>
+      <p>
+        If you are unsatisfied with our services, please contact us immediately. We are committed to resolving issues amicably and ensuring client satisfaction whenever possible.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

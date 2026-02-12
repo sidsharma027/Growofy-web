@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const seo = {
+  title: "Conversion Optimization - Growofy",
+  description: "More revenue from the same traffic. We optimize your funnels, landing pages, and checkout flows to increase conversions.",
+};
+---
+
+<BaseLayout seo={seo}>
+  <!-- Hero Section -->
+  <section class="section py-20 lg:py-32 bg-zinc-950 text-white min-h-[70vh] flex items-center">
+    <div class="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
+      <h1 class="font-display text-5xl lg:text-7xl font-bold uppercase tracking-tight mb-6">
+        Traffic is Vanity. <span class="text-rose-500">Sales are Sanity.</span>
+      </h1>
+      <p class="text-lg lg:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto">
+        Stop pouring water into a leaky bucket. We analyze user behavior, A/B test offers, and optimize every step of your funnel to squeeze more revenue from your existing traffic.
+      </p>
+      <div class="flex justify-center">
+        <div class="squircle-bg rounded-lg bg-white text-black">
+          <a href="/contact" class="flex h-12 items-center px-8 text-lg font-bold">
+            Book Strategy Call
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do -->
+  <section class="section py-20 bg-white text-zinc-900">
+    <div class="col-span-12 lg:col-span-6 lg:col-start-2">
+      <h2 class="font-display text-3xl lg:text-5xl font-bold uppercase mb-8">Data-Driven Growth.</h2>
+      <p class="text-lg text-zinc-600 mb-6">
+        We don't guess. We look at heatmaps, scroll depth, drop-off points, and checkout friction. Then we fix it. From optimizing your "Add to Cart" button color to restructuring your entire checkout flow for UPI payments, we focus on the small tweaks that lead to massive revenue jumps.
+      </p>
+      <ul class="space-y-4 text-zinc-800 font-medium">
+        <li class="flex items-center gap-2"><span class="text-rose-600">✓</span> Funnel Audits & Heatmap Analysis</li>
+        <li class="flex items-center gap-2"><span class="text-rose-600">✓</span> Landing Page A/B Testing</li>
+        <li class="flex items-center gap-2"><span class="text-rose-600">✓</span> Checkout Flow Optimization</li>
+        <li class="flex items-center gap-2"><span class="text-rose-600">✓</span> Offer & Pricing Strategy</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section py-20 bg-zinc-50">
+      <div class="col-span-12 text-center mb-16">
+          <h2 class="font-display text-4xl font-bold uppercase">Our Optimization Process</h2>
+      </div>
+      <div class="col-span-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-8 bg-white rounded-2xl border border-zinc-100 shadow-sm">
+              <span class="text-6xl font-display font-bold text-zinc-100">01</span>
+              <h3 class="text-xl font-bold mt-4 mb-2">Analyze</h3>
+              <p class="text-zinc-500">We install tracking tools and gather data on where you are losing money.</p>
+          </div>
+          <div class="p-8 bg-white rounded-2xl border border-zinc-100 shadow-sm">
+              <span class="text-6xl font-display font-bold text-zinc-100">02</span>
+              <h3 class="text-xl font-bold mt-4 mb-2">Hypothesize</h3>
+              <p class="text-zinc-500">We create a testing roadmap based on the highest impact opportunities.</p>
+          </div>
+          <div class="p-8 bg-white rounded-2xl border border-zinc-100 shadow-sm">
+              <span class="text-6xl font-display font-bold text-zinc-100">03</span>
+              <h3 class="text-xl font-bold mt-4 mb-2">Test & Implement</h3>
+              <p class="text-zinc-500">We run the tests. Winners get implemented permanently.</p>
+          </div>
+      </div>
+  </section>
+
+  <!-- Who It's For -->
+  <section class="section py-20 bg-zinc-900 text-white">
+      <div class="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
+          <h2 class="font-display text-3xl mb-6">Who This Is For</h2>
+          <p class="text-xl text-zinc-400">
+              Businesses with existing traffic (>5,000 visitors/mo) looking to improve conversion rates and AOV.
+          </p>
+      </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section py-32 bg-rose-500 text-white text-center">
+      <div class="col-span-12">
+          <h2 class="font-display text-4xl lg:text-6xl font-bold uppercase mb-8">Ready to Build a Revenue System?</h2>
+          <div class="flex justify-center">
+            <div class="squircle-bg rounded-lg bg-black text-white">
+              <a href="/contact" class="flex h-12 items-center px-8 text-lg font-bold hover:text-rose-400 transition-colors">
+                Book Strategy Call
+              </a>
+            </div>
+          </div>
+      </div>
+  </section>
+
+</BaseLayout>

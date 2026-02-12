@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const seo = {
+  title: "Meta Ads Management - Growofy",
+  description: "Stop burning money on boosted posts. We run high-ROI Facebook & Instagram ad campaigns for Indian businesses.",
+};
+---
+
+<BaseLayout seo={seo}>
+  <!-- Hero Section -->
+  <section class="section py-20 lg:py-32 bg-zinc-950 text-white min-h-[70vh] flex items-center">
+    <div class="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
+      <h1 class="font-display text-5xl lg:text-7xl font-bold uppercase tracking-tight mb-6">
+        Stop Boosting. <span class="text-indigo-500">Start Scaling.</span>
+      </h1>
+      <p class="text-lg lg:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto">
+        Vanity metrics don't pay bills. We run data-backed, high-conversion Meta Ad campaigns designed to generate qualified leads and sales for your business.
+      </p>
+      <div class="flex justify-center">
+        <div class="squircle-bg rounded-lg bg-white text-black">
+          <a href="/contact" class="flex h-12 items-center px-8 text-lg font-bold">
+            Book Strategy Call
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do -->
+  <section class="section py-20 bg-white text-zinc-900">
+    <div class="col-span-12 lg:col-span-6 lg:col-start-2">
+      <h2 class="font-display text-3xl lg:text-5xl font-bold uppercase mb-8">Performance. Not Promises.</h2>
+      <p class="text-lg text-zinc-600 mb-6">
+        Most agencies set up ads and forget them. We act as your growth partners. We A/B test creatives, optimize audiences daily, and scale what works. We focus on ROAS (Return on Ad Spend) and CPA (Cost Per Acquisition), ensuring every rupee spent brings back revenue.
+      </p>
+      <ul class="space-y-4 text-zinc-800 font-medium">
+        <li class="flex items-center gap-2"><span class="text-indigo-600">✓</span> Full Funnel Strategy (Top/Middle/Bottom)</li>
+        <li class="flex items-center gap-2"><span class="text-indigo-600">✓</span> Creative Testing & Iteration</li>
+        <li class="flex items-center gap-2"><span class="text-indigo-600">✓</span> Advanced Retargeting</li>
+        <li class="flex items-center gap-2"><span class="text-indigo-600">✓</span> Detailed ROI Reporting</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section py-20 bg-zinc-50">
+      <div class="col-span-12 text-center mb-16">
+          <h2 class="font-display text-4xl font-bold uppercase">Our Ad Strategy</h2>
+      </div>
+      <div class="col-span-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-8 bg-white rounded-2xl border border-zinc-100 shadow-sm">
+              <span class="text-6xl font-display font-bold text-zinc-100">01</span>
+              <h3 class="text-xl font-bold mt-4 mb-2">Audit & Setup</h3>
+              <p class="text-zinc-500">We fix your Pixel, verify your domain, and audit past ad performance.</p>
+          </div>
+          <div class="p-8 bg-white rounded-2xl border border-zinc-100 shadow-sm">
+              <span class="text-6xl font-display font-bold text-zinc-100">02</span>
+              <h3 class="text-xl font-bold mt-4 mb-2">Launch & Test</h3>
+              <p class="text-zinc-500">We launch multiple creative variations to find winning hooks quickly.</p>
+          </div>
+          <div class="p-8 bg-white rounded-2xl border border-zinc-100 shadow-sm">
+              <span class="text-6xl font-display font-bold text-zinc-100">03</span>
+              <h3 class="text-xl font-bold mt-4 mb-2">Scale & Optimize</h3>
+              <p class="text-zinc-500">We kill losing ads and double down budget on the winners.</p>
+          </div>
+      </div>
+  </section>
+
+  <!-- Who It's For -->
+  <section class="section py-20 bg-zinc-900 text-white">
+      <div class="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
+          <h2 class="font-display text-3xl mb-6">Who This Is For</h2>
+          <p class="text-xl text-zinc-400">
+              Businesses spending ₹30k+ per month on ads but not seeing clear ROI. E-commerce stores, local services, and lead-gen focused companies.
+          </p>
+      </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section py-32 bg-indigo-500 text-white text-center">
+      <div class="col-span-12">
+          <h2 class="font-display text-4xl lg:text-6xl font-bold uppercase mb-8">Ready to Build a Revenue System?</h2>
+          <div class="flex justify-center">
+            <div class="squircle-bg rounded-lg bg-black text-white">
+              <a href="/contact" class="flex h-12 items-center px-8 text-lg font-bold hover:text-indigo-400 transition-colors">
+                Book Strategy Call
+              </a>
+            </div>
+          </div>
+      </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,94 @@
+---
+import { getLangFromUrl, useTranslations, useTranslatedPath } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<section id="pricing" class="bg-zinc-900 py-24 text-white">
+    <div class="mx-auto max-w-7xl px-8 md:px-12">
+        <div class="mb-16 text-center">
+            <h2 class="font-display text-4xl font-bold uppercase sm:text-5xl md:text-6xl">Simple, Transparent Pricing</h2>
+            <p class="mt-4 text-xl text-zinc-400">Everything you need to go from offline to online revenue machine.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Starter Package -->
+            <div class="rounded-3xl border border-zinc-700 bg-zinc-800/50 p-6 transition-transform hover:-translate-y-2 md:p-8 md:last:col-span-2 lg:last:col-span-1">
+                <div class="mb-4 inline-block rounded-full bg-blue-900/30 px-4 py-1 text-sm font-semibold text-blue-400">Starter</div>
+                <h3 class="mb-2 text-2xl font-bold">Go Online</h3>
+                <p class="mb-6 h-12 text-sm text-zinc-400">Best for small stores starting their digital journey.</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold">₹25k - ₹40k</span>
+                    <span class="block text-sm text-zinc-500">One-time Setup Fee</span>
+                </div>
+                
+                <ul class="mb-8 space-y-4 text-sm text-zinc-300">
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> Shopify Store Setup</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> WhatsApp Integration</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> Payment Gateway Setup</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> Basic SEO Setup</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> Pixel & Tracking Setup</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> 1 Ad Campaign Setup</li>
+                </ul>
+                <div class="text-center">
+                    <a href={translatePath("/contact/")} class="inline-block w-full rounded-full bg-zinc-700 py-3 text-sm font-semibold text-white transition-colors hover:bg-zinc-600">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Growth Package -->
+            <div class="relative rounded-3xl border border-lime-500 bg-zinc-800/80 p-6 shadow-2xl shadow-lime-900/20 transition-transform hover:-translate-y-2 md:p-8">
+                 <div class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-lime-500 px-4 py-1 text-xs font-bold uppercase text-black">Most Popular</div>
+                <div class="mb-4 inline-block rounded-full bg-lime-900/30 px-4 py-1 text-sm font-semibold text-lime-400">Growth</div>
+                <h3 class="mb-2 text-2xl font-bold">Sales Engine</h3>
+                <p class="mb-6 h-12 text-sm text-zinc-400">Perfect for businesses ready for consistent leads & sales.</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold">₹15k - ₹30k</span>
+                    <span class="block text-sm text-zinc-500">Per Month + Setup Fee</span>
+                </div>
+
+                <ul class="mb-8 space-y-4 text-sm text-zinc-300">
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> Full Website Development</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> Sales Funnel Setup</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> 3-5 Ad Creatives / Month</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> 3-4 Managed Campaigns</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> Retargeting Campaigns</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> WhatsApp Automation</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> Monthly Reporting</li>
+                </ul>
+                <div class="text-center">
+                    <a href={translatePath("/contact/")} class="inline-block w-full rounded-full bg-lime-500 py-3 text-sm font-bold text-black transition-colors hover:bg-lime-400">Transform My Business</a>
+                </div>
+            </div>
+
+            <!-- Scale Package -->
+            <div class="rounded-3xl border border-zinc-700 bg-zinc-800/50 p-6 transition-transform hover:-translate-y-2 md:p-8 md:last:col-span-2 lg:last:col-span-1">
+                <div class="mb-4 inline-block rounded-full bg-purple-900/30 px-4 py-1 text-sm font-semibold text-purple-400">Scale</div>
+                <h3 class="mb-2 text-2xl font-bold">Performance Partnership</h3>
+                <p class="mb-6 h-12 text-sm text-zinc-400">For serious businesses scaling to ₹50L+ revenue.</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold">₹30k - ₹60k</span>
+                    <span class="block text-sm text-zinc-500">Per Month + Setup Fee</span>
+                </div>
+
+                <ul class="mb-8 space-y-4 text-sm text-zinc-300">
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> Advanced Funnel Systems</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> Custom Landing Pages</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> Rapid Creative Testing</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> Weekly Optimization</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> Dedicated Strategy Partner</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> Growth Roadmap Phase 2</li>
+                    <li class="flex items-center gap-3"><span class="text-lime-500">✓</span> Expansion Planning</li>
+                </ul>
+                <div class="text-center">
+                    <a href={translatePath("/contact/")} class="inline-block w-full rounded-full bg-white py-3 text-sm font-semibold text-black transition-colors hover:bg-zinc-200">Scale With Us</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-12 text-center">
+             <p class="text-zinc-500 text-sm">Custom enterprise plans available for high-volume businesses.</p>
+        </div>
+    </div>
+</section>

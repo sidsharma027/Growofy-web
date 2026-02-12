@@ -1,0 +1,30 @@
+---
+import { getLangFromUrl, useTranslatedPath } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+---
+
+<section>
+  <div class="px-8 py-12 mx-auto md:px-12 2xl:max-w-7xl lg:py-24">
+    <div class="p-8 lg:p-20 bg-zinc-900 rounded-4xl lg:rounded-6xl text-center">
+      <div class="inline-flex items-center gap-4">
+        <div class="w-20 h-1 bg-white hidden md:block"></div>
+        <span class="text-xs font-semibold tracking-wide uppercase text-white">
+          Stop waiting. Start growing.</span
+        >
+      </div>
+      <p
+        class="mt-8 text-4xl font-display font-semibold md:text-6xl lg:text-8xl text-white">
+        Ready to Build a Revenue System Instead of Just Running Ads?
+      </p>
+      <div class="flex mt-10 justify-center">
+        <a
+          class="flex items-center justify-center w-full h-10 px-8 rounded-full py-2 text-sm font-semibold text-black transition-all lg:h-16 bg-lime-500 hover:bg-lime-400 lg:w-auto"
+          href={translatePath("/contact/")}>
+          Book Your Strategy Call &nbsp;&nbsp; →</a
+        >
+      </div>
+    </div>
+  </div>
+</section>

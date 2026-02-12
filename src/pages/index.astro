@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/landing/Hero.astro";
+import Tagline from "../components/landing/Tagline.astro";
+import AllInOne from "../components/landing/AllInOne.astro";
+import Services from "../components/landing/Services.astro";
+import Pricing from "../components/landing/Pricing.astro";
+import Testimonials from "../components/landing/Testimonials.astro";
+import Facts from "../components/landing/Facts.astro";
+import Cta from "../components/landing/Cta.astro";
+import Faq from "../components/landing/Faq.astro";
+---
+
+<BaseLayout>
+	<!-- 1. Hero Section -->
+	<Hero />
+	<!-- 2. Problem Section (Pain Points) -->
+	<Tagline />
+	<!-- 3. The Growofy Growth System™ -->
+	<AllInOne class="!pt-10" />
+	<!-- 4. Services Section -->
+	<Services />
+	<!-- 5. Pricing Section -->
+	<Pricing />
+	<!-- 6. Case Study / Testimonial -->
+	<Testimonials />
+	<!-- 7. Why Growofy? -->
+	<Facts />
+	<!-- 8. FAQ -->
+	<Faq />
+	<!-- 9. Final CTA -->
+	<Cta />
+</BaseLayout>

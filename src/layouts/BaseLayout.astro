@@ -1,0 +1,86 @@
+---
+import BlobCursorFollower from "@/components/global/BlobCursorFollower.astro";
+import { AstroSeo, type AstroSeoProps } from "@astrolib/seo";
+import BaseHead from "@components/BaseHead.astro";
+import BackgroundTexture from "@components/global/BackgroundTexture.astro";
+import Footer from "@components/global/Footer.astro";
+import Navigation from "@components/global/Navigation.astro";
+import { getLangFromUrl } from "../i18n/utils";
+
+const { pathname } = Astro.url;
+
+type Props = {
+	seo?: AstroSeoProps;
+};
+
+const { seo: seoProp } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+
+const shareImage = new URL("/images/meta/mintaka_share.gif", Astro.site).toString();
+
+const defaultSeo: AstroSeoProps = {
+	title: "Growofy — Turn Your Offline Business Into a Predictable Online Revenue Machine",
+	description:
+		"Growofy is a performance marketing agency that builds complete digital sales systems for offline businesses in India. Meta Ads, funnels, WhatsApp automation & more.",
+	canonical: "https://growofy.in",
+	openGraph: {
+		url: "https://growofy.in",
+		title: "Growofy — Turn Your Offline Business Into a Predictable Online Revenue Machine",
+		description:
+			"Growofy is a performance marketing agency that builds complete digital sales systems for offline businesses in India. Meta Ads, funnels, WhatsApp automation & more.",
+		images: [
+			{
+				url: shareImage,
+				width: 1200,
+				height: 630,
+				alt: "Growofy - Performance Marketing Agency",
+				type: "image/gif",
+			},
+			{
+				url: shareImage,
+				width: 4096,
+				height: 4096,
+				alt: "Growofy - Performance Marketing Agency",
+				type: "image/gif",
+			},
+		],
+		site_name: "Growofy",
+	},
+	twitter: {
+		handle: "@growofy",
+		site: "@growofy",
+		cardType: "summary_large_image",
+	},
+	additionalMetaTags: [
+		{
+			name: "publisher",
+			content: "Growofy",
+		},
+	],
+};
+
+const seo = {
+	...defaultSeo,
+	...seoProp,
+};
+
+function cursorFollowerActive() {
+	const paths = ["", "/", "/it/", "/it"];
+	return paths.includes(pathname);
+}
+---
+
+<html lang={lang}>
+	<head>
+		<BaseHead />
+		<AstroSeo {...seo} />
+	</head>
+	<body class="bg-slate-50">
+		<BackgroundTexture />
+		<Navigation />
+		{cursorFollowerActive() && <BlobCursorFollower />}
+		<slot />
+		<Footer />
+	</body>
+</html>

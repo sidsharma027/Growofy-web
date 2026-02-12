@@ -1,0 +1,16 @@
+---
+import Contact from "@/components/forms/Contact.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { AstroSeoProps } from "@astrolib/seo";
+
+const seo: AstroSeoProps = {
+	title: "Contact Growofy: Book Your Free Growth Strategy Call",
+	description:
+		"Ready to scale your offline business? Book a free strategy call with Growofy to discuss digital sales systems, WhatsApp automation, and performance marketing.",
+	canonical: "https://growofy.in/contact/",
+};
+---
+
+<BaseLayout seo={seo}>
+	<Contact />
+</BaseLayout>
