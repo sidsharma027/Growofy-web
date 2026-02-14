@@ -1,6 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import logo from "@assets/images/logo.png";
+// Use the public SVG to avoid image-processing (sharp) at dev time
 import { Icon } from "astro-icon/components";
 import { getLangFromUrl, getUrlWithoutLang, useTranslations, useTranslatedPath } from "@i18n/utils";
 
@@ -42,7 +41,7 @@ const { pathname } = Astro.url;
 
 <header>
 	<a href={translatePath("/")} aria-label="Home" class="logo absolute z-50 flex h-[4.5rem] items-center md:h-[5.9rem]">
-		<Image src={logo} alt="Growofy" class="h-8 w-auto md:h-10 invert brightness-0 bg-transparent object-contain" loading="eager" />
+		<img src="/logoFull.svg" alt="Growofy" class="h-12 w-auto object-contain md:h-16" loading="eager" />
 	</a>
 	<div data-xdata="{ open: false }" class="navigation fixed right-0 top-0 z-50" data-xbind.class="{'w-full navbar-open': open}">
 		<div class="ml-auto md:max-w-fit" data-xbind.class="{'max-w-3xl': open, 'max-w-[8rem]': !open }">
@@ -102,7 +101,6 @@ const { pathname } = Astro.url;
 									</li>
 								))
 							}
-
 						</ul>
 					</nav>
 				</div>
