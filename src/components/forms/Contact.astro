@@ -101,16 +101,18 @@ const translatePath = useTranslatedPath(lang);
 
 <script>
 	document.addEventListener("DOMContentLoaded", () => {
-		const form = document.querySelector('form[data-static-form-name="contact"]');
+		const form = document.querySelector('form[data-static-form-name="contact"]') as HTMLFormElement;
 		if (!form) return;
 
 		form.addEventListener("submit", async (e) => {
 			e.preventDefault();
 
-			const button = form.querySelector("button[type='submit']");
-			const originalText = button.textContent;
-			button.disabled = true;
-			button.textContent = "Sending...";
+			const button = form.querySelector("button[type='submit']") as HTMLButtonElement;
+			const originalText = button?.textContent;
+			if (button) {
+				button.disabled = true;
+				button.textContent = "Sending...";
+			}
 
 			try {
 				const formData = new FormData(form);
@@ -122,8 +124,10 @@ const translatePath = useTranslatedPath(lang);
 				// Validate required fields
 				if (!name || !email || !message) {
 					alert("Please fill in all required fields.");
-					button.disabled = false;
-					button.textContent = originalText;
+					if (button) {
+						button.disabled = false;
+						button.textContent = originalText || "Send";
+					}
 					return;
 				}
 
@@ -147,8 +151,8 @@ const translatePath = useTranslatedPath(lang);
 								],
 								reply_to: [
 									{
-										email: email,
-										name: name,
+										email: email as string,
+										name: name as string,
 									},
 								],
 							},
@@ -179,8 +183,10 @@ const translatePath = useTranslatedPath(lang);
 				console.error("Form submission error:", error);
 				alert("Error sending message. Please try again or contact us directly.");
 			} finally {
-				button.disabled = false;
-				button.textContent = originalText;
+				if (button) {
+					button.disabled = false;
+					button.textContent = originalText || "Send";
+				}
 			}
 		});
 	});
