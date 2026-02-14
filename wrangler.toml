@@ -1,0 +1,21 @@
+name = "growofy-mintaka"
+type = "javascript"
+compatibility_date = "2024-12-16"
+main = "functions/api/contact.js"
+
+[build]
+command = "npm run build"
+cwd = "./"
+
+[[routes]]
+pattern = "/api/contact"
+zone_id = ""
+
+[env.production]
+vars = { ENVIRONMENT = "production" }
+
+[[d1_databases]]
+binding = "DB"
+database_name = "growofy"
+database_id = "e6accd9f-3a89-4d42-8a19-0e28a69f2ed4"
+
