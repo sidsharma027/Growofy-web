@@ -16,9 +16,9 @@ const translatePath = useTranslatedPath(lang);
 		<Title class="pb-4 pt-20 uppercase" title={t("contact.title")} subtitle={t("contact.subtitle")} />
 		<div class="mx-auto mb-12 flex max-w-3xl flex-wrap justify-center gap-x-8 gap-y-4 text-center text-base text-zinc-400 md:text-lg">
 			<a href="mailto:growofy@gmail.com" class="transition-colors hover:text-white">growofy@gmail.com</a>
-			<span class="hidden sm:inline text-zinc-700">|</span>
+			<span class="hidden text-zinc-700 sm:inline">|</span>
 			<a href="https://wa.me/91790671513" target="_blank" class="transition-colors hover:text-white">Chat on WhatsApp</a>
-			<span class="hidden sm:inline text-zinc-700">|</span>
+			<span class="hidden text-zinc-700 sm:inline">|</span>
 			<a href="https://instagram.com/growofy" target="_blank" class="transition-colors hover:text-white">@growofy</a>
 		</div>
 		<form data-static-form-name="contact" class="mx-auto max-w-2xl pt-12 lg:pt-20">
@@ -41,11 +41,11 @@ const translatePath = useTranslatedPath(lang);
 				</div>
 				<div class="flex gap-x-4 sm:col-span-2">
 					<label class="text-sm leading-6 text-gray-600" id="switch-1-label">
-                        <input type="checkbox" required class="accent-zinc-900 mr-2 h-4 w-4" />
-						I agree to the 
+						<input type="checkbox" required class="mr-2 h-4 w-4 accent-zinc-900" />
+						I agree to the
 						<a href="/terms-and-conditions" class="font-semibold text-slate-800 hover:underline">Terms & Conditions</a>
-                        and
-                        <a href="/privacy-policy" class="font-semibold text-slate-800 hover:underline">Privacy Policy</a>.
+						and
+						<a href="/privacy-policy" class="font-semibold text-slate-800 hover:underline">Privacy Policy</a>.
 					</label>
 				</div>
 			</div>
@@ -98,3 +98,43 @@ const translatePath = useTranslatedPath(lang);
 		@apply pointer-events-auto relative m-0 w-full cursor-text rounded-lg border-0 bg-slate-200 px-5 py-2 text-xl font-normal not-italic outline-none placeholder:text-gray-400 focus:ring-slate-500;
 	}
 </style>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const form = document.querySelector('form[data-static-form-name="contact"]');
+		if (!form) return;
+
+		form.addEventListener("submit", async (e) => {
+			e.preventDefault();
+
+			const button = form.querySelector("button[type='submit']");
+			const originalText = button.textContent;
+			button.disabled = true;
+			button.textContent = "Sending...";
+
+			try {
+				const formData = new FormData(form);
+				const response = await fetch("/api/contact", {
+					method: "POST",
+					body: formData,
+				});
+
+				const data = await response.json();
+
+				if (data.success) {
+					// Show success message
+					alert("Thank you! Your message has been sent successfully. We'll get back to you soon!");
+					form.reset();
+				} else {
+					alert(`Error: ${data.error || "Failed to send message"}`);
+				}
+			} catch (error) {
+				console.error("Form submission error:", error);
+				alert("Error sending message. Please try again or contact us directly.");
+			} finally {
+				button.disabled = false;
+				button.textContent = originalText;
+			}
+		});
+	});
+</script>
