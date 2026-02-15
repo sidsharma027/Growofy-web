@@ -1,28 +1,29 @@
 ---
+
 ---
 
-<section class="relative isolate min-h-screen bg-contact-light px-6 py-24 text-slate-900 sm:py-32 lg:px-8">
+<section class="bg-contact-light relative isolate min-h-screen px-6 py-24 text-slate-900 sm:py-32 lg:px-8">
 	<!-- Static gradient background (removed heavy animations) -->
 
 	<!-- Background static orbs (removed animations) -->
-	<div class="absolute -right-40 top-20 h-80 w-80 rounded-full bg-blue-200 blur-3xl opacity-10 mix-blend-multiply pointer-events-none"></div>
-	<div class="absolute -bottom-20 -left-40 h-96 w-96 rounded-full bg-purple-200 blur-3xl opacity-10 mix-blend-multiply pointer-events-none"></div>
-	<div class="absolute right-1/2 top-1/3 h-72 w-72 rounded-full bg-slate-200 blur-3xl opacity-5 mix-blend-multiply pointer-events-none"></div>
+	<div class="pointer-events-none absolute -right-40 top-20 h-80 w-80 rounded-full bg-blue-200 opacity-10 mix-blend-multiply blur-3xl"></div>
+	<div class="pointer-events-none absolute -bottom-20 -left-40 h-96 w-96 rounded-full bg-purple-200 opacity-10 mix-blend-multiply blur-3xl"></div>
+	<div class="pointer-events-none absolute right-1/2 top-1/3 h-72 w-72 rounded-full bg-slate-200 opacity-5 mix-blend-multiply blur-3xl"></div>
 
 	<!-- Main gradient element -->
-	<div class="absolute inset-x-0 top-[-10rem] transform-gpu overflow-hidden blur-3xl sm:top-[-20rem] pointer-events-none" aria-hidden="true">
+	<div class="pointer-events-none absolute inset-x-0 top-[-10rem] transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
 		<div class="gradient-element"></div>
 	</div>
 
-	<div class="relative isolate mx-auto max-w-[56.25rem] z-10">
+	<div class="relative isolate z-10 mx-auto max-w-[56.25rem]">
 		<!-- Hero section with decorative divider -->
-		<div class="pt-20 text-center fade-in">
+		<div class="fade-in pt-20 text-center">
 			<p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Growth Application</p>
-			<h1 class="mt-4 text-3xl font-semibold uppercase tracking-tight text-slate-900 sm:text-4xl md:text-5xl animate-headline">
+			<h1 class="animate-headline mt-4 text-3xl font-semibold uppercase tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
 				Apply For Growth Partnership
 			</h1>
 			<div class="divider-line"></div>
-			<p class="mt-4 text-base text-slate-600 md:text-lg animate-subheading">
+			<p class="animate-subheading mt-4 text-base text-slate-600 md:text-lg">
 				Tell us about your business so we can recommend the right growth strategy.
 			</p>
 		</div>
@@ -42,7 +43,9 @@
 		</div>
 
 		<!-- Form with glassmorphism -->
-		<form data-static-form-name="growth-application" class="relative z-20 mx-auto mt-10 space-y-10 rounded-2xl border border-white/40 bg-white/95 p-6 shadow-glass sm:p-10 fade-in">
+		<form
+			data-static-form-name="growth-application"
+			class="shadow-glass fade-in relative z-20 mx-auto mt-10 space-y-10 rounded-2xl border border-white/40 bg-white/95 p-6 sm:p-10">
 			<div class="form-section scroll-reveal">
 				<h3 class="section-title">
 					<span class="section-icon">01</span> Basic Information
@@ -206,7 +209,7 @@
 				<button type="submit" class="submit-button">
 					<span>Submit Growth Application</span>
 					<svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-						<path d="M5 12h14M12 5l7 7-7 7"/>
+						<path d="M5 12h14M12 5l7 7-7 7"></path>
 					</svg>
 				</button>
 				<p class="text-xs text-slate-500">Required fields are marked with *</p>
@@ -240,11 +243,10 @@
 	}
 
 	.bg-contact-light {
-		background: radial-gradient(circle at top right, rgba(240, 244, 249, 0.9), transparent 55%),
+		background:
+			radial-gradient(circle at top right, rgba(240, 244, 249, 0.9), transparent 55%),
 			linear-gradient(135deg, #f9fafb 0%, #f5f7fa 25%, #f0f4f9 50%, #f5f7fa 75%, #f9fafb 100%);
 	}
-
-
 
 	/* Decorative divider */
 	.divider-line {
@@ -297,7 +299,7 @@
 	}
 
 	.form-input {
-		@apply w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 transition-colors duration-150 focus:border-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-300/50;
+		@apply w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 transition-colors duration-150 placeholder:text-slate-400 focus:border-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-300/50;
 	}
 
 	.form-input:hover {
@@ -314,7 +316,7 @@
 
 	/* Dropdown specific styling - ensure instant rendering */
 	select.form-input {
-		@apply appearance-none cursor-pointer bg-white pr-9;
+		@apply cursor-pointer appearance-none bg-white pr-9;
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%231a1a1a' d='M1 1l4 4 4-4' stroke='%231a1a1a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
 		background-repeat: no-repeat;
 		background-position: right 10px center;
@@ -323,17 +325,17 @@
 
 	.radio-group,
 	.checkbox-group {
-		@apply flex flex-wrap gap-3 mt-2 pointer-events-auto;
+		@apply pointer-events-auto mt-2 flex flex-wrap gap-3;
 	}
 
 	.radio-option,
 	.checkbox-option {
-		@apply flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-slate-900 cursor-pointer select-none;
+		@apply flex cursor-pointer select-none items-center gap-2 text-sm text-slate-600 transition-colors hover:text-slate-900;
 	}
 
 	.radio-option input,
 	.checkbox-option input {
-		@apply h-5 w-5 rounded border-2 border-slate-300 bg-white accent-slate-900 transition-all cursor-pointer flex-shrink-0;
+		@apply h-5 w-5 flex-shrink-0 cursor-pointer rounded border-2 border-slate-300 bg-white accent-slate-900 transition-all;
 		appearance: none;
 		-webkit-appearance: none;
 		-moz-appearance: none;
@@ -355,7 +357,9 @@
 	.checkbox-option input:focus,
 	.radio-option input:focus {
 		outline: none;
-		box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
+		box-shadow:
+			0 0 0 3px rgba(26, 26, 26, 0.1),
+			0 2px 4px rgba(0, 0, 0, 0.05);
 		border-color: #4b5563;
 	}
 
@@ -367,17 +371,17 @@
 
 	.checkbox-option input:disabled,
 	.radio-option input:disabled {
-		@apply opacity-50 cursor-not-allowed;
+		@apply cursor-not-allowed opacity-50;
 	}
 
 	/* Button styling */
 	.submit-button {
-		@apply relative w-full rounded-lg bg-gradient-to-r from-slate-900 to-slate-800 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-glass transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 overflow-hidden;
+		@apply shadow-glass relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-lg bg-gradient-to-r from-slate-900 to-slate-800 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0;
 		will-change: transform, box-shadow;
 	}
 
 	.submit-button::before {
-		content: '';
+		content: "";
 		position: absolute;
 		inset: 0;
 		background: radial-gradient(circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.1) 0%, transparent 80%);
@@ -401,9 +405,10 @@
 
 	/* Glassmorphism shadow */
 	.shadow-glass {
-		box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1), 
-                    inset 0 1px 1px rgba(255, 255, 255, 0.6),
-                    0 1px 3px rgba(15, 23, 42, 0.05);
+		box-shadow:
+			0 20px 50px rgba(15, 23, 42, 0.1),
+			inset 0 1px 1px rgba(255, 255, 255, 0.6),
+			0 1px 3px rgba(15, 23, 42, 0.05);
 	}
 
 	.shadow-soft {
@@ -416,7 +421,7 @@
 	}
 
 	.link-hover::after {
-		content: '';
+		content: "";
 		position: absolute;
 		bottom: -2px;
 		left: 0;
@@ -431,7 +436,6 @@
 	}
 
 	/* Animations */
-
 
 	@keyframes fadeIn {
 		from {
@@ -476,11 +480,26 @@
 		--animation-order: 0;
 	}
 
-	.form-section:nth-of-type(1) { --animation-order: 0; animation-delay: 0s; }
-	.form-section:nth-of-type(2) { --animation-order: 1; animation-delay: 0.05s; }
-	.form-section:nth-of-type(3) { --animation-order: 2; animation-delay: 0.1s; }
-	.form-section:nth-of-type(4) { --animation-order: 3; animation-delay: 0.15s; }
-	.form-section:nth-of-type(5) { --animation-order: 4; animation-delay: 0.2s; }
+	.form-section:nth-of-type(1) {
+		--animation-order: 0;
+		animation-delay: 0s;
+	}
+	.form-section:nth-of-type(2) {
+		--animation-order: 1;
+		animation-delay: 0.05s;
+	}
+	.form-section:nth-of-type(3) {
+		--animation-order: 2;
+		animation-delay: 0.1s;
+	}
+	.form-section:nth-of-type(4) {
+		--animation-order: 3;
+		animation-delay: 0.15s;
+	}
+	.form-section:nth-of-type(5) {
+		--animation-order: 4;
+		animation-delay: 0.2s;
+	}
 </style>
 
 <script>
@@ -489,19 +508,19 @@
 		if (!form) return;
 
 		const successMessage = document.getElementById("form-success") as HTMLElement | null;
-		const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+		const scrollRevealElements = document.querySelectorAll(".scroll-reveal");
 
 		// Optimized scroll reveal with passive listener
 		const observerOptions = {
 			threshold: 0.05,
-			rootMargin: '0px 0px -25px 0px'
+			rootMargin: "0px 0px -25px 0px",
 		};
 
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
-					entry.target.style.opacity = '1';
-					entry.target.style.transform = 'translateY(0)';
+					entry.target.style.opacity = "1";
+					entry.target.style.transform = "translateY(0)";
 					observer.unobserve(entry.target);
 				}
 			});
@@ -517,13 +536,24 @@
 
 			const originalText = submitBtn.innerHTML;
 			submitBtn.disabled = true;
-			submitBtn.textContent = "Sending...";
+			submitBtn.textContent = "Submitting...";
 
 			try {
 				const formData = new FormData(form);
-				const response = await fetch("/api/contact", {
+				const jsonBody: Record<string, unknown> = {};
+				for (const [key, value] of formData.entries()) {
+					if (key === "services") {
+						if (!Array.isArray(jsonBody.services)) jsonBody.services = [];
+						(jsonBody.services as string[]).push(value.toString());
+					} else {
+						jsonBody[key] = value.toString();
+					}
+				}
+
+				const response = await fetch("/api/apply", {
 					method: "POST",
-					body: formData,
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(jsonBody),
 				});
 
 				const data = await response.json();
@@ -534,6 +564,7 @@
 						successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
 					}
 					form.reset();
+					form.style.display = "none";
 				} else {
 					alert(`Error: ${data.error || "Failed to send message"}`);
 				}
