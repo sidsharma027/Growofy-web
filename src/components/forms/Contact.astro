@@ -1,70 +1,224 @@
 ---
-import Title from "@components/global/Title.astro";
-
-import { getLangFromUrl, useTranslations, useTranslatedPath } from "@i18n/utils";
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-const translatePath = useTranslatedPath(lang);
 ---
 
-<section class="isolate px-6 py-24 sm:py-32 lg:px-8">
-	<div class="absolute inset-x-0 top-[-10rem] transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
+<section class="relative isolate min-h-screen bg-contact-light px-6 py-24 text-slate-900 sm:py-32 lg:px-8">
+	<!-- Static gradient background (removed heavy animations) -->
+
+	<!-- Background static orbs (removed animations) -->
+	<div class="absolute -right-40 top-20 h-80 w-80 rounded-full bg-blue-200 blur-3xl opacity-10 mix-blend-multiply pointer-events-none"></div>
+	<div class="absolute -bottom-20 -left-40 h-96 w-96 rounded-full bg-purple-200 blur-3xl opacity-10 mix-blend-multiply pointer-events-none"></div>
+	<div class="absolute right-1/2 top-1/3 h-72 w-72 rounded-full bg-slate-200 blur-3xl opacity-5 mix-blend-multiply pointer-events-none"></div>
+
+	<!-- Main gradient element -->
+	<div class="absolute inset-x-0 top-[-10rem] transform-gpu overflow-hidden blur-3xl sm:top-[-20rem] pointer-events-none" aria-hidden="true">
 		<div class="gradient-element"></div>
 	</div>
-	<div class="mx-auto">
-		<Title class="pb-4 pt-20 uppercase" title={t("contact.title")} subtitle={t("contact.subtitle")} />
-		<div class="mx-auto mb-12 flex max-w-3xl flex-wrap justify-center gap-x-8 gap-y-4 text-center text-base text-zinc-400 md:text-lg">
-			<a href="mailto:growofy@gmail.com" class="transition-colors hover:text-white">growofy@gmail.com</a>
-			<span class="hidden text-zinc-700 sm:inline">|</span>
-			<a href="https://wa.me/91790671513" target="_blank" class="transition-colors hover:text-white">Chat on WhatsApp</a>
-			<span class="hidden text-zinc-700 sm:inline">|</span>
-			<a href="https://instagram.com/growofy" target="_blank" class="transition-colors hover:text-white">@growofy</a>
+
+	<div class="relative isolate mx-auto max-w-[56.25rem] z-10">
+		<!-- Hero section with decorative divider -->
+		<div class="pt-20 text-center fade-in">
+			<p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Growth Application</p>
+			<h1 class="mt-4 text-3xl font-semibold uppercase tracking-tight text-slate-900 sm:text-4xl md:text-5xl animate-headline">
+				Apply For Growth Partnership
+			</h1>
+			<div class="divider-line"></div>
+			<p class="mt-4 text-base text-slate-600 md:text-lg animate-subheading">
+				Tell us about your business so we can recommend the right growth strategy.
+			</p>
 		</div>
-		<form data-static-form-name="contact" class="mx-auto max-w-2xl pt-12 lg:pt-20">
-			<div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-				<div class="form-field sm:col-span-2">
-					<label for="name" class="form-label">{t("contact.name")}*</label>
-					<input type="text" name="name" id="name" autocomplete="given-name" required />
-				</div>
-				<div class="form-field sm:col-span-2">
-					<label for="email" class="form-label">{t("contact.email")}*</label>
-					<input type="email" name="email" id="email" autocomplete="email" required />
-				</div>
-				<div class="form-field sm:col-span-2">
-					<label for="company" class="form-label">{t("contact.company")}</label>
-					<input type="text" name="company" id="company" autocomplete="organization" />
-				</div>
-				<div class="form-field sm:col-span-2">
-					<label for="message" class="form-label">{t("contact.message")}*</label>
-					<textarea name="message" id="message" rows="4" required></textarea>
-				</div>
-				<div class="flex gap-x-4 sm:col-span-2">
-					<label class="text-sm leading-6 text-gray-600" id="switch-1-label">
-						<input type="checkbox" required class="mr-2 h-4 w-4 accent-zinc-900" />
-						I agree to the
-						<a href="/terms-and-conditions" class="font-semibold text-slate-800 hover:underline">Terms & Conditions</a>
-						and
-						<a href="/privacy-policy" class="font-semibold text-slate-800 hover:underline">Privacy Policy</a>.
-					</label>
+
+		<!-- Contact links -->
+		<div class="mx-auto mb-10 mt-8 flex max-w-3xl flex-wrap justify-center gap-x-8 gap-y-4 text-center text-sm text-slate-500 md:text-base">
+			<a href="mailto:growofy@gmail.com" class="link-hover transition-colors hover:text-slate-900">growofy@gmail.com</a>
+			<span class="hidden text-slate-300 sm:inline">|</span>
+			<a href="https://wa.me/91790671513" target="_blank" class="link-hover transition-colors hover:text-slate-900">Chat on WhatsApp</a>
+			<span class="hidden text-slate-300 sm:inline">|</span>
+			<a href="https://instagram.com/growofy" target="_blank" class="link-hover transition-colors hover:text-slate-900">@growofy</a>
+		</div>
+
+		<!-- Success message -->
+		<div id="form-success" class="form-success hidden" role="status">
+			Application Received. Our team will review and contact you within 24 hours.
+		</div>
+
+		<!-- Form with glassmorphism -->
+		<form data-static-form-name="growth-application" class="relative z-20 mx-auto mt-10 space-y-10 rounded-2xl border border-white/40 bg-white/95 p-6 shadow-glass sm:p-10 fade-in">
+			<div class="form-section scroll-reveal">
+				<h3 class="section-title">
+					<span class="section-icon">01</span> Basic Information
+				</h3>
+				<div class="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
+					<div class="form-field">
+						<label for="full-name" class="form-label">Full Name *</label>
+						<input class="form-input" type="text" name="fullName" id="full-name" autocomplete="name" required />
+					</div>
+					<div class="form-field">
+						<label for="business-name" class="form-label">Business Name *</label>
+						<input class="form-input" type="text" name="businessName" id="business-name" autocomplete="organization" required />
+					</div>
+					<div class="form-field">
+						<label for="email" class="form-label">Email Address *</label>
+						<input class="form-input" type="email" name="email" id="email" autocomplete="email" required />
+					</div>
+					<div class="form-field">
+						<label for="phone" class="form-label">Phone Number *</label>
+						<input class="form-input" type="tel" name="phone" id="phone" autocomplete="tel" required />
+					</div>
+					<div class="form-field">
+						<label for="website" class="form-label">Website URL</label>
+						<input class="form-input" type="url" name="website" id="website" placeholder="https://" />
+					</div>
+					<div class="form-field">
+						<label for="social" class="form-label">Instagram / Social Media Link</label>
+						<input class="form-input" type="url" name="social" id="social" placeholder="https://" />
+					</div>
 				</div>
 			</div>
-			<div class="flex pt-10">
-				<div class="squircle-bg rounded-lg bg-zinc-900">
-					<button
-						type="submit"
-						class="flex h-10 w-auto max-w-none flex-1 items-center justify-center px-6 py-2 text-xl text-slate-200 transition-all hover:text-white md:font-bold lg:h-10">
-						{t("contact.send")}
-					</button>
+
+			<div class="form-section scroll-reveal">
+				<h3 class="section-title">
+					<span class="section-icon">02</span> Business Details
+				</h3>
+				<div class="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
+					<div class="form-field">
+						<label for="industry" class="form-label">What industry are you in? *</label>
+						<select class="form-input" name="industry" id="industry" required>
+							<option value="" disabled selected>Select industry</option>
+							<option>Retail</option>
+							<option>Healthcare</option>
+							<option>Beauty & Wellness</option>
+							<option>Food & Beverage</option>
+							<option>Education</option>
+							<option>Real Estate</option>
+							<option>Services</option>
+							<option>Other</option>
+						</select>
+					</div>
+					<div class="form-field">
+						<label for="years" class="form-label">How long have you been in business? *</label>
+						<select class="form-input" name="yearsInBusiness" id="years" required>
+							<option value="" disabled selected>Select timeframe</option>
+							<option>&lt;1 year</option>
+							<option>1-3 years</option>
+							<option>3+ years</option>
+						</select>
+					</div>
+					<div class="form-field">
+						<label for="revenue" class="form-label">Current Monthly Revenue? *</label>
+						<select class="form-input" name="monthlyRevenue" id="revenue" required>
+							<option value="" disabled selected>Select range</option>
+							<option>Under ₹2L</option>
+							<option>₹2L – ₹10L</option>
+							<option>₹10L – ₹50L</option>
+							<option>₹50L+</option>
+						</select>
+					</div>
+					<div class="form-field">
+						<label for="aov" class="form-label">Average Order Value?</label>
+						<input class="form-input" type="text" name="averageOrderValue" id="aov" />
+					</div>
+					<div class="form-field sm:col-span-2">
+						<label class="form-label">Do you currently run paid ads? *</label>
+						<div class="radio-group">
+							<label class="radio-option">
+								<input type="radio" name="paidAds" value="Yes" required />
+								<span>Yes</span>
+							</label>
+							<label class="radio-option">
+								<input type="radio" name="paidAds" value="No" required />
+								<span>No</span>
+							</label>
+						</div>
+					</div>
 				</div>
+			</div>
+
+			<div class="form-section scroll-reveal">
+				<h3 class="section-title">
+					<span class="section-icon">03</span> Growth Goals
+				</h3>
+				<div class="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
+					<div class="form-field sm:col-span-2">
+						<label for="target" class="form-label">What is your target monthly revenue in the next 6 months?</label>
+						<input class="form-input" type="text" name="targetRevenue" id="target" />
+					</div>
+					<div class="form-field sm:col-span-2">
+						<label for="challenge" class="form-label">What is your biggest challenge right now?</label>
+						<textarea class="form-input" name="challenge" id="challenge" rows="4"></textarea>
+					</div>
+					<div class="form-field sm:col-span-2">
+						<label class="form-label">What services are you looking for?</label>
+						<div class="checkbox-group">
+							<label class="checkbox-option">
+								<input type="checkbox" name="services" value="Store Setup" />
+								<span>Store Setup</span>
+							</label>
+							<label class="checkbox-option">
+								<input type="checkbox" name="services" value="Paid Ads" />
+								<span>Paid Ads</span>
+							</label>
+							<label class="checkbox-option">
+								<input type="checkbox" name="services" value="Funnel Optimization" />
+								<span>Funnel Optimization</span>
+							</label>
+							<label class="checkbox-option">
+								<input type="checkbox" name="services" value="Scaling Strategy" />
+								<span>Scaling Strategy</span>
+							</label>
+							<label class="checkbox-option">
+								<input type="checkbox" name="services" value="Full Growth Partnership" />
+								<span>Full Growth Partnership</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-section scroll-reveal">
+				<h3 class="section-title">
+					<span class="section-icon">04</span> Budget Qualification
+				</h3>
+				<div class="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
+					<div class="form-field sm:col-span-2">
+						<label for="budget" class="form-label">Monthly marketing budget? *</label>
+						<select class="form-input" name="monthlyBudget" id="budget" required>
+							<option value="" disabled selected>Select budget</option>
+							<option>Under ₹25k</option>
+							<option>₹25k – ₹50k</option>
+							<option>₹50k – ₹1L</option>
+							<option>₹1L+</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-section scroll-reveal">
+				<h3 class="section-title">Final Question</h3>
+				<div class="grid grid-cols-1 gap-x-6 gap-y-5">
+					<div class="form-field">
+						<label for="partner" class="form-label">Why do you think Growofy is the right partner for you?</label>
+						<textarea class="form-input" name="whyGrowofy" id="partner" rows="4"></textarea>
+					</div>
+				</div>
+			</div>
+
+			<div class="flex flex-col items-stretch gap-4">
+				<button type="submit" class="submit-button">
+					<span>Submit Growth Application</span>
+					<svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<path d="M5 12h14M12 5l7 7-7 7"/>
+					</svg>
+				</button>
+				<p class="text-xs text-slate-500">Required fields are marked with *</p>
 			</div>
 		</form>
 	</div>
 </section>
 
 <style>
+	/* Background and gradient effects */
 	.gradient-element {
-		@apply relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem];
+		@apply relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[18deg] bg-gradient-to-tr from-[#f2f4f8] via-[#eef1f6] to-[#f9fafb] opacity-40 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem];
 		clip-path: polygon(
 			74.1% 44.1%,
 			100% 61.6%,
@@ -85,34 +239,285 @@ const translatePath = useTranslatedPath(lang);
 		);
 	}
 
+	.bg-contact-light {
+		background: radial-gradient(circle at top right, rgba(240, 244, 249, 0.9), transparent 55%),
+			linear-gradient(135deg, #f9fafb 0%, #f5f7fa 25%, #f0f4f9 50%, #f5f7fa 75%, #f9fafb 100%);
+	}
+
+
+
+	/* Decorative divider */
+	.divider-line {
+		@apply mx-auto my-6 h-0.5 w-16 bg-gradient-to-r from-transparent via-slate-300 to-transparent;
+	}
+
+	/* Fade in animations */
+	.fade-in {
+		animation: fadeIn 0.5s ease forwards;
+	}
+
+	.animate-headline {
+		animation: slideUpHeadline 0.6s ease forwards;
+	}
+
+	.animate-subheading {
+		animation: slideUpSubheading 0.6s ease forwards 0.1s;
+	}
+
+	.scroll-reveal {
+		animation: scrollReveal 0.5s ease forwards;
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	/* Form styling */
+	.form-section {
+		@apply border-t border-slate-200 pt-8;
+		contain: content;
+	}
+
+	.form-section:first-of-type {
+		@apply border-t-0 pt-0;
+	}
+
+	.section-title {
+		@apply mb-6 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.25em] text-slate-500;
+	}
+
+	.section-icon {
+		@apply inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900/5 font-mono text-xs font-bold text-slate-600;
+	}
+
 	.form-field {
-		@apply block;
+		@apply flex flex-col gap-2;
 	}
 
 	.form-label {
-		@apply flex pl-1 text-sm font-semibold leading-6 text-gray-900;
+		@apply text-sm font-semibold uppercase tracking-wide text-slate-700;
 	}
 
-	input:not([type="checkbox"]),
-	textarea {
-		@apply pointer-events-auto relative m-0 w-full cursor-text rounded-lg border-0 bg-slate-200 px-5 py-2 text-xl font-normal not-italic outline-none placeholder:text-gray-400 focus:ring-slate-500;
+	.form-input {
+		@apply w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 transition-colors duration-150 focus:border-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-300/50;
 	}
+
+	.form-input:hover {
+		@apply border-slate-400;
+	}
+
+	.form-input:focus {
+		@apply border-slate-600;
+	}
+
+	.form-input:invalid {
+		@apply border-slate-400;
+	}
+
+	/* Dropdown specific styling - ensure instant rendering */
+	select.form-input {
+		@apply appearance-none cursor-pointer bg-white pr-9;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%231a1a1a' d='M1 1l4 4 4-4' stroke='%231a1a1a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: right 10px center;
+		background-size: 10px 6px;
+	}
+
+	.radio-group,
+	.checkbox-group {
+		@apply flex flex-wrap gap-3 mt-2 pointer-events-auto;
+	}
+
+	.radio-option,
+	.checkbox-option {
+		@apply flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-slate-900 cursor-pointer select-none;
+	}
+
+	.radio-option input,
+	.checkbox-option input {
+		@apply h-5 w-5 rounded border-2 border-slate-300 bg-white accent-slate-900 transition-all cursor-pointer flex-shrink-0;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		position: relative;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+	}
+
+	.checkbox-option input:checked,
+	.radio-option input:checked {
+		background-color: #1a1a1a;
+		border-color: #1a1a1a;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 60% 60%;
+		box-shadow: 0 2px 6px rgba(26, 26, 26, 0.15);
+	}
+
+	.checkbox-option input:focus,
+	.radio-option input:focus {
+		outline: none;
+		box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
+		border-color: #4b5563;
+	}
+
+	.checkbox-option input:hover:not(:disabled),
+	.radio-option input:hover:not(:disabled) {
+		border-color: #64748b;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+	}
+
+	.checkbox-option input:disabled,
+	.radio-option input:disabled {
+		@apply opacity-50 cursor-not-allowed;
+	}
+
+	/* Button styling */
+	.submit-button {
+		@apply relative w-full rounded-lg bg-gradient-to-r from-slate-900 to-slate-800 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-glass transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 overflow-hidden;
+		will-change: transform, box-shadow;
+	}
+
+	.submit-button::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.1) 0%, transparent 80%);
+		opacity: 0;
+		transition: opacity 0.3s;
+		pointer-events: none;
+	}
+
+	.arrow-icon {
+		@apply h-4 w-4 transition-transform duration-200;
+	}
+
+	.submit-button:hover .arrow-icon {
+		@apply translate-x-1;
+	}
+
+	/* Success message */
+	.form-success {
+		@apply rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-center text-sm font-semibold text-emerald-700 shadow-lg;
+	}
+
+	/* Glassmorphism shadow */
+	.shadow-glass {
+		box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1), 
+                    inset 0 1px 1px rgba(255, 255, 255, 0.6),
+                    0 1px 3px rgba(15, 23, 42, 0.05);
+	}
+
+	.shadow-soft {
+		box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+	}
+
+	/* Link hover effect */
+	.link-hover {
+		position: relative;
+	}
+
+	.link-hover::after {
+		content: '';
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 0;
+		height: 1px;
+		background: currentColor;
+		transition: width 0.3s ease;
+	}
+
+	.link-hover:hover::after {
+		width: 100%;
+	}
+
+	/* Animations */
+
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes slideUpHeadline {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes slideUpSubheading {
+		from {
+			opacity: 0;
+			transform: translateY(15px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes scrollReveal {
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* Intersection observer helper for scroll animations */
+	.scroll-reveal {
+		--animation-order: 0;
+	}
+
+	.form-section:nth-of-type(1) { --animation-order: 0; animation-delay: 0s; }
+	.form-section:nth-of-type(2) { --animation-order: 1; animation-delay: 0.05s; }
+	.form-section:nth-of-type(3) { --animation-order: 2; animation-delay: 0.1s; }
+	.form-section:nth-of-type(4) { --animation-order: 3; animation-delay: 0.15s; }
+	.form-section:nth-of-type(5) { --animation-order: 4; animation-delay: 0.2s; }
 </style>
 
 <script>
 	document.addEventListener("DOMContentLoaded", () => {
-		const form = document.querySelector('form[data-static-form-name="contact"]') as HTMLFormElement | null;
+		const form = document.querySelector('form[data-static-form-name="growth-application"]') as HTMLFormElement | null;
 		if (!form) return;
+
+		const successMessage = document.getElementById("form-success") as HTMLElement | null;
+		const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+
+		// Optimized scroll reveal with passive listener
+		const observerOptions = {
+			threshold: 0.05,
+			rootMargin: '0px 0px -25px 0px'
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.style.opacity = '1';
+					entry.target.style.transform = 'translateY(0)';
+					observer.unobserve(entry.target);
+				}
+			});
+		}, observerOptions);
+
+		scrollRevealElements.forEach((el) => observer.observe(el));
 
 		form.addEventListener("submit", async (e) => {
 			e.preventDefault();
 
-			const button = form.querySelector("button[type='submit']") as HTMLButtonElement | null;
-			if (!button) return;
+			const submitBtn = form.querySelector("button[type='submit']") as HTMLButtonElement | null;
+			if (!submitBtn) return;
 
-			const originalText = button.textContent;
-			button.disabled = true;
-			button.textContent = "Sending...";
+			const originalText = submitBtn.innerHTML;
+			submitBtn.disabled = true;
+			submitBtn.textContent = "Sending...";
 
 			try {
 				const formData = new FormData(form);
@@ -124,8 +529,10 @@ const translatePath = useTranslatedPath(lang);
 				const data = await response.json();
 
 				if (data.success) {
-					// Show success message
-					alert("Thank you! Your message has been sent successfully. We'll get back to you soon!");
+					if (successMessage) {
+						successMessage.classList.remove("hidden");
+						successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+					}
 					form.reset();
 				} else {
 					alert(`Error: ${data.error || "Failed to send message"}`);
@@ -134,8 +541,8 @@ const translatePath = useTranslatedPath(lang);
 				console.error("Form submission error:", error);
 				alert("Error sending message. Please try again or contact us directly.");
 			} finally {
-				button.disabled = false;
-				button.textContent = originalText;
+				submitBtn.disabled = false;
+				submitBtn.innerHTML = originalText;
 			}
 		});
 	});
