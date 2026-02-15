@@ -77,9 +77,9 @@ const { pathname } = Astro.url;
 							</svg>
 						</button>
 					</div>
-					<nav data-xbind.class="{'flex': open, 'hidden': !open}" class="hidden flex-grow flex-col justify-center py-12 md:flex md:py-0">
+					<nav data-xbind.class="{'flex': open, 'hidden': !open}" class="hidden flex-grow flex-col justify-center py-6 md:flex md:py-0">
 						<ul
-							class="flex list-none flex-col items-end justify-center gap-2 px-2 text-center text-3xl md:flex-row md:items-center md:text-base">
+							class="flex list-none flex-col items-end justify-center gap-0.5 px-2 text-center text-xl md:flex-row md:items-center md:gap-2 md:text-base">
 							{
 								pages.map((page) => (
 									<li data-cursor-hover>
@@ -93,7 +93,7 @@ const { pathname } = Astro.url;
 													: ""
 											}`}>
 											<span class="menu-item-container inline-block">
-												<span class="menu-item px-4 py-1 font-semibold uppercase tracking-wide text-zinc-400 hover:text-white focus:text-white focus:shadow-none focus:outline-none">
+												<span class="menu-item px-3 py-0.5 font-semibold uppercase tracking-wide text-zinc-400 hover:text-white focus:text-white focus:shadow-none focus:outline-none md:px-4 md:py-1">
 													{page.title}
 												</span>
 											</span>
@@ -115,6 +115,21 @@ const { pathname } = Astro.url;
 	}
 	.navigation.navbar-open {
 		mix-blend-mode: luminosity;
+	}
+	@media (max-width: 767px) {
+		.navigation {
+			mix-blend-mode: normal;
+		}
+		.navigation,
+		.logo {
+			transition: transform 0.3s ease, opacity 0.3s ease;
+		}
+		.navigation.nav-hidden,
+		.logo.nav-hidden {
+			transform: translateY(-120%);
+			opacity: 0;
+			pointer-events: none;
+		}
 	}
 	.navigation,
 	.logo {
@@ -270,6 +285,38 @@ const { pathname } = Astro.url;
 
 			window?.removeEventListener("scroll", handleScroll);
 			window?.addEventListener("scroll", handleScroll);
+		}
+
+		const navRoot = document.querySelector("header .navigation") as HTMLElement | null;
+		const logo = document.querySelector("header .logo") as HTMLElement | null;
+		if (window.innerWidth < 768 && navRoot && logo) {
+			let lastScrollY = window.scrollY;
+			const delta = 8;
+
+			function handleMobileScroll() {
+				const currentY = window.scrollY;
+				const isOpen = navRoot.classList.contains("navbar-open");
+
+				if (isOpen || currentY < 40) {
+					navRoot.classList.remove("nav-hidden");
+					logo.classList.remove("nav-hidden");
+					lastScrollY = currentY;
+					return;
+				}
+
+				if (currentY > lastScrollY + delta) {
+					navRoot.classList.add("nav-hidden");
+					logo.classList.add("nav-hidden");
+				} else if (currentY < lastScrollY - delta) {
+					navRoot.classList.remove("nav-hidden");
+					logo.classList.remove("nav-hidden");
+				}
+
+				lastScrollY = currentY;
+			}
+
+			window.removeEventListener("scroll", handleMobileScroll);
+			window.addEventListener("scroll", handleMobileScroll, { passive: true });
 		}
 	}
 
