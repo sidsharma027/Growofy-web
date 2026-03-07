@@ -7,7 +7,7 @@ const translatePath = useTranslatedPath(lang);
 ---
 
 <section id="pricing" class="bg-zinc-950 py-24 text-white">
-	<div class="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
+	<div class="mx-auto max-w-[1400px] px-6 md:px-8 lg:px-12">
 		<!-- Header -->
 		<div class="mb-16 text-center">
 			<span class="text-xs font-semibold uppercase tracking-wide text-zinc-500">Investment Options</span>
@@ -16,80 +16,162 @@ const translatePath = useTranslatedPath(lang);
 		</div>
 
 		<!-- Pricing Cards -->
-		<div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
-			<!-- Launch Program -->
+		<div class="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
+			<!-- Foundation Plan -->
 			<div class="group flex flex-col rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8 transition-all hover:border-zinc-700">
 				<div class="mb-6">
 					<div class="mb-3 inline-block rounded-md bg-zinc-800 px-3 py-1 text-xs font-medium uppercase tracking-wide text-zinc-400">
-						Launch Program
+						Foundation Plan
 					</div>
-					<h3 class="mb-3 text-2xl font-bold">Launch Program</h3>
-					<p class="mb-2 text-sm text-zinc-500">Best for: Businesses going online for the first time</p>
-					<p class="text-sm font-medium text-zinc-400">Revenue Stage: ₹0 – ₹2L/month</p>
+					<h3 class="mb-3 text-2xl font-bold">Foundation Plan</h3>
+					<p class="mb-2 text-sm text-zinc-500">Best for: Local businesses, manufacturers, farms, and service providers who want a professional online presence.</p>
+					<p class="text-sm font-medium text-zinc-400">Revenue Stage: Offline / Early stage businesses</p>
 				</div>
 
-				<div class="mb-8">
+				<div class="mb-6">
 					<div class="flex items-baseline gap-2">
-						<span class="text-4xl font-bold">₹35k – ₹60k</span>
+						<span class="whitespace-nowrap text-3xl font-bold">₹20k – ₹30k</span>
+						<span class="text-sm text-zinc-500">/month</span>
 					</div>
-					<span class="mt-1 block text-sm text-zinc-500">One-Time Setup</span>
+					<span class="mt-1 block text-sm text-zinc-500">2 Month Engagement</span>
 				</div>
+
+				<p class="mb-4 text-sm text-zinc-400">Build a strong digital presence and start generating leads online.</p>
 
 				<ul class="mb-8 flex-grow space-y-3 text-sm text-zinc-300">
 					<li class="flex items-start gap-3">
 						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 						</svg>
-						<span>Shopify Store Development</span>
+						<span>Custom coded lead generation website (4–5 pages)</span>
 					</li>
 					<li class="flex items-start gap-3">
 						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 						</svg>
-						<span>Payment Gateway Integration</span>
+						<span>Mobile responsive design</span>
 					</li>
 					<li class="flex items-start gap-3">
 						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 						</svg>
-						<span>WhatsApp Integration</span>
+						<span>Contact form and WhatsApp integration</span>
 					</li>
 					<li class="flex items-start gap-3">
 						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 						</svg>
-						<span>Basic Branding Setup</span>
+						<span>Basic SEO setup</span>
 					</li>
 					<li class="flex items-start gap-3">
 						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 						</svg>
-						<span>SEO Fundamentals</span>
+						<span>Lead capture structure</span>
 					</li>
 					<li class="flex items-start gap-3">
 						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 						</svg>
-						<span>Pixel & Tracking Setup</span>
+						<span>Brand layout and content structure</span>
 					</li>
 					<li class="flex items-start gap-3">
 						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 						</svg>
-						<span>Launch Ad Campaign Setup</span>
+						<span>Google Analytics setup</span>
 					</li>
 					<li class="flex items-start gap-3">
 						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 						</svg>
-						<span>14-Day Post Launch Support</span>
+						<span>Meta Pixel setup</span>
 					</li>
 				</ul>
 
 				<a
 					href={translatePath("/contact/")}
-					class="block w-full rounded-lg bg-zinc-800 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-zinc-700">
-					Launch My Business
+					class="mt-auto block w-full rounded-lg bg-zinc-800 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-zinc-700">
+					Start My Online Presence
+				</a>
+			</div>
+
+			<!-- Launch Plan -->
+			<div class="group flex flex-col rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8 transition-all hover:border-zinc-700">
+				<div class="mb-6">
+					<div class="mb-3 inline-block rounded-md bg-zinc-800 px-3 py-1 text-xs font-medium uppercase tracking-wide text-zinc-400">
+						Launch Plan
+					</div>
+					<h3 class="mb-3 text-2xl font-bold">Launch Plan</h3>
+					<p class="mb-2 text-sm text-zinc-500">Best for: Businesses launching their ecommerce store for the first time.</p>
+					<p class="text-sm font-medium text-zinc-400">Revenue Stage: ₹0 – ₹2L/month</p>
+				</div>
+
+				<div class="mb-6">
+					<div class="flex items-baseline gap-2">
+						<span class="whitespace-nowrap text-3xl font-bold">₹30k – ₹45k</span>
+						<span class="text-sm text-zinc-500">/month</span>
+					</div>
+					<span class="mt-1 block text-sm text-zinc-500">2 Month Engagement</span>
+				</div>
+
+				<p class="mb-4 text-sm text-zinc-400">Launch a conversion-ready Shopify store to start selling online.</p>
+
+				<ul class="mb-8 flex-grow space-y-3 text-sm text-zinc-300">
+					<li class="flex items-start gap-3">
+						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span>Shopify store setup</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span>Premium theme customization</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span>Product page optimization</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span>Payment gateway integration</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span>Shipping setup</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span>10 product uploads</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span>Conversion-focused homepage</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span>Meta Pixel + tracking setup</span>
+					</li>
+				</ul>
+
+				<a
+					href={translatePath("/contact/")}
+					class="mt-auto block w-full rounded-lg bg-zinc-800 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-zinc-700">
+					Launch My Store
 				</a>
 			</div>
 
@@ -98,7 +180,7 @@ const translatePath = useTranslatedPath(lang);
 				class="group relative flex flex-col rounded-2xl border border-zinc-700 bg-zinc-900/80 p-8 shadow-xl shadow-zinc-950/50 transition-all hover:border-zinc-600">
 				<div
 					class="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-zinc-800 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-zinc-300">
-					🔥 Recommended for Growing Brands
+					🔥 Recommended
 				</div>
 
 				<div class="mb-6 mt-2">
@@ -106,72 +188,73 @@ const translatePath = useTranslatedPath(lang);
 						Growth Engine
 					</div>
 					<h3 class="mb-3 text-2xl font-bold">Growth Engine</h3>
-					<p class="mb-2 text-sm text-zinc-400">Best for: Businesses with existing website wanting consistent revenue</p>
+					<p class="mb-2 text-sm text-zinc-400">Best for: Brands with an existing store that want consistent online sales.</p>
 					<p class="text-sm font-medium text-zinc-300">Revenue Stage: ₹2L – ₹10L/month</p>
 				</div>
 
-				<div class="mb-8">
+				<div class="mb-6">
 					<div class="flex items-baseline gap-2">
-						<span class="text-4xl font-bold">₹25k – ₹45k</span>
+						<span class="whitespace-nowrap text-3xl font-bold">₹50k – ₹75k</span>
 						<span class="text-sm text-zinc-500">/month</span>
 					</div>
-					<span class="mt-1 block text-sm text-zinc-500">Minimum 3 Month Commitment</span>
 				</div>
+
+				<p class="mb-4 text-sm text-zinc-400">Build a predictable sales engine through performance marketing.</p>
 
 				<ul class="mb-8 flex-grow space-y-3 text-sm text-zinc-300">
 					<li class="flex items-start gap-3">
 						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 						</svg>
-						<span>Sales Funnel Optimization</span>
+						<span>Meta Ads campaign management</span>
 					</li>
 					<li class="flex items-start gap-3">
 						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 						</svg>
-						<span>Landing Page Improvements</span>
+						<span>4–6 ad creatives per month</span>
 					</li>
 					<li class="flex items-start gap-3">
 						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 						</svg>
-						<span>4–6 Ad Creatives Per Month</span>
+						<span>3–5 campaign structures</span>
 					</li>
 					<li class="flex items-start gap-3">
 						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 						</svg>
-						<span>3–5 Campaign Management</span>
+						<span>Retargeting campaigns</span>
 					</li>
 					<li class="flex items-start gap-3">
 						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 						</svg>
-						<span>Retargeting Setup</span>
+						<span>Landing page improvements</span>
 					</li>
 					<li class="flex items-start gap-3">
 						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 						</svg>
-						<span>WhatsApp Automation</span>
+						<span>WhatsApp automation</span>
 					</li>
 					<li class="flex items-start gap-3">
 						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 						</svg>
-						<span>Weekly Optimization</span>
+						<span>Weekly optimization</span>
 					</li>
 					<li class="flex items-start gap-3">
 						<svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 						</svg>
-						<span>Monthly Performance Review</span>
+						<span>Monthly performance review</span>
 					</li>
 				</ul>
 
 				<a
 					href={translatePath("/contact/")}
-					class="block w-full rounded-lg bg-white py-3 text-center text-sm font-bold text-black transition-colors hover:bg-zinc-200">
+					class="mt-auto block w-full rounded-lg bg-white py-3 text-center text-sm font-bold text-black transition-colors hover:bg-zinc-200">
 					Build My Sales System
 				</a>
 			</div>
@@ -179,24 +262,23 @@ const translatePath = useTranslatedPath(lang);
 			<!-- Scale Partnership -->
 			<div class="group flex flex-col rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8 transition-all hover:border-zinc-700">
 				<div class="mb-6">
-					<div class="mb-3 flex items-center justify-between">
-						<div class="inline-block rounded-md bg-zinc-800 px-3 py-1 text-xs font-medium uppercase tracking-wide text-zinc-400">
-							Scale Partnership
-						</div>
-						<span class="text-xs text-zinc-400">Qualification Call Required</span>
+					<div class="mb-3 inline-block rounded-md bg-zinc-800 px-3 py-1 text-xs font-medium uppercase tracking-wide text-zinc-400">
+						Scale Partnership
 					</div>
 					<h3 class="mb-3 text-2xl font-bold">Scale Partnership</h3>
-					<p class="mb-2 text-sm text-zinc-400">Best for: Established brands ready to scale aggressively</p>
-					<p class="text-sm font-medium text-zinc-300">Revenue Stage: ₹10L+/month</p>
+					<p class="mb-2 text-sm text-zinc-500">Best for: Established brands ready to scale aggressively.</p>
+					<p class="text-sm font-medium text-zinc-400">Revenue Stage: ₹10L+/month</p>
 				</div>
 
-				<div class="mb-8">
+				<div class="mb-6">
 					<div class="flex items-baseline gap-2">
-						<span class="text-4xl font-bold">₹60k – ₹1.2L</span>
+						<span class="whitespace-nowrap text-3xl font-bold">₹90k – ₹1.5L</span>
 						<span class="text-sm text-zinc-500">/month</span>
 					</div>
 					<span class="mt-1 block text-sm text-zinc-500">OR Retainer + Performance Model</span>
 				</div>
+
+				<p class="mb-4 text-sm text-zinc-400">A strategic growth partnership focused on aggressive revenue scaling.</p>
 
 				<ul class="mb-8 flex-grow space-y-3 text-sm text-zinc-300">
 					<li class="flex items-start gap-3">
@@ -251,7 +333,7 @@ const translatePath = useTranslatedPath(lang);
 
 				<a
 					href={translatePath("/contact/")}
-					class="block w-full rounded-lg bg-zinc-800 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-zinc-700">
+					class="mt-auto block w-full rounded-lg bg-zinc-800 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-zinc-700">
 					Apply For Partnership
 				</a>
 			</div>
@@ -262,13 +344,13 @@ const translatePath = useTranslatedPath(lang);
 			<div class="text-center">
 				<h3 class="mb-8 text-2xl font-bold md:text-3xl">Not Sure Which Plan Fits Your Business?</h3>
 
-				<div class="mx-auto grid max-w-4xl grid-cols-1 gap-6 text-left md:grid-cols-3">
+				<div class="mx-auto grid max-w-5xl grid-cols-1 gap-6 text-left md:grid-cols-2 lg:grid-cols-4">
 					<div class="rounded-lg border border-zinc-800 bg-zinc-900/50 p-6">
 						<div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-zinc-800 text-lg font-bold">1</div>
 						<p class="text-sm leading-relaxed text-zinc-300">
-							If you <span class="font-semibold text-white">do not have a website</span> → Choose <span
+							If you <span class="font-semibold text-white">need an online presence</span> → Choose <span
 								class="font-semibold text-white">
-								Launch Program
+								Foundation Plan
 							</span>
 						</p>
 					</div>
@@ -276,9 +358,9 @@ const translatePath = useTranslatedPath(lang);
 					<div class="rounded-lg border border-zinc-800 bg-zinc-900/50 p-6">
 						<div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-zinc-800 text-lg font-bold">2</div>
 						<p class="text-sm leading-relaxed text-zinc-300">
-							If you have a website but <span class="font-semibold text-white">inconsistent sales</span> → Choose <span
+							If you want to <span class="font-semibold text-white">launch an ecommerce store</span> → Choose <span
 								class="font-semibold text-white">
-								Growth Engine
+								Launch Plan
 							</span>
 						</p>
 					</div>
@@ -286,7 +368,17 @@ const translatePath = useTranslatedPath(lang);
 					<div class="rounded-lg border border-zinc-800 bg-zinc-900/50 p-6">
 						<div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-zinc-800 text-lg font-bold">3</div>
 						<p class="text-sm leading-relaxed text-zinc-300">
-							If you already run ads & want <span class="font-semibold text-white">aggressive scaling</span> → Choose <span
+							If you have a store but <span class="font-semibold text-white">inconsistent sales</span> → Choose <span
+								class="font-semibold text-white">
+								Growth Engine
+							</span>
+						</p>
+					</div>
+
+					<div class="rounded-lg border border-zinc-800 bg-zinc-900/50 p-6">
+						<div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-zinc-800 text-lg font-bold">4</div>
+						<p class="text-sm leading-relaxed text-zinc-300">
+							If you want <span class="font-semibold text-white">aggressive scaling</span> → Choose <span
 								class="font-semibold text-white">
 								Scale Partnership
 							</span>
